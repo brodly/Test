@@ -1,10 +1,10 @@
 ---
   title: "InfStats"
-author: "Jorge Valderrama"
+author: "Pep Guardiola"
 date: "2023-07-08"
 output: html_document
 ---
-  
+
   ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
@@ -36,36 +36,36 @@ library(psych)
 ```
 
 ```{r}
-college %>% 
+college %>%
   t_test(weight_2 ~ smokes)
 ```
 ```{r}
-college %>% 
+college %>%
   t_test(weight_2 ~ smokes, var.equal = TRUE)
 ```
 ```{r}
-college %>% 
+college %>%
   t_test(weight_2 ~ smokes, var.equal = TRUE, detailed = TRUE)
 ```
 ```{r}
-college %>% 
+college %>%
   t_test(weight_2 ~ smokes, var.equal = TRUE, detailed = TRUE, alternative = "greater")
 ```
 ```{r}
-college %>% 
+college %>%
   t_test(act_english ~ gender, var.equal = TRUE,
          comparisons = list(c("Male","Female")))
 ```
 ```{r}
-college %>% 
+college %>%
   t_test(act_english ~ gender, var.equal = TRUE, detailed = TRUE,
          comparisons = list(c("Male","Female")))
 ```
-## Dependent T Test 
+## Dependent T Test
 ```{r}
 college %>%
   select(weight_1, weight_2) %>%
-  pivot_longer(cols = everything(), 
+  pivot_longer(cols = everything(),
                names_to = "time",
                values_to = "weight",
                names_prefix = "weight_") %>%
@@ -91,15 +91,15 @@ aggregate(hospital_visits ~ age_group, data = hospital_data, FUN = mean)
 ```
 ```{r}
 city_data <- data.frame(
-  city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"), 
-  category = c("Transportation", "Healthcare", "Socioeconomics", "Safety", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
+  city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"),
+  category = c("Transportation", "Deli Sandwiches", "Subways", "BK", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
   score = c(70, 75, 65, NA, 78, 80, 70, NA)
 )
 ```
 
 ```{r}
 city_data <- data.frame(
-  city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"), 
+  city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"),
   category = c("Transportation", "Healthcare", "Socioeconomics", "Safety", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
   score = c(70, 75, 65, NA, 78, 80, 70, NA)
 )
