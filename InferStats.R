@@ -1,11 +1,11 @@
 ---
-title: "InfStats"
+  title: "InfStats"
 author: "Jorge Valderrama"
 date: "2023-07-08"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
+  
+  ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
@@ -74,8 +74,8 @@ college %>%
 
 ```{r}
 hospital_data <- data.frame(
-age_group= c("Under50", "Over50", "Under50", "Over50", "Over50"),
-hospital_visits = c(4, 3, 2, 5, 2)
+  age_group= c("Under50", "Over50", "Under50", "Over50", "Over50"),
+  hospital_visits = c(4, 3, 2, 5, 2)
 )
 
 mean(hospital_data$hospital_visits)
@@ -83,30 +83,30 @@ mean(hospital_data$hospital_visits)
 
 ```{r}
 hospital_data <- data.frame(
-age_group= c("Under50", "Over50", "Under50", "Over50", "Over50"),
-hospital_visits = c(4, 3, 2, 5, 2)
+  age_group= c("Under50", "Over50", "Under50", "Over50", "Over50"),
+  hospital_visits = c(4, 3, 2, 5, 2)
 )
 
 aggregate(hospital_visits ~ age_group, data = hospital_data, FUN = mean)
 ```
 ```{r}
 city_data <- data.frame(
-city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"), 
-category = c("Transportation", "Healthcare", "Socioeconomics", "Safety", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
-score = c(70, 75, 65, NA, 78, 80, 70, NA)
+  city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"), 
+  category = c("Transportation", "Healthcare", "Socioeconomics", "Safety", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
+  score = c(70, 75, 65, NA, 78, 80, 70, NA)
 )
 ```
 
 ```{r}
 city_data <- data.frame(
-city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"), 
-category = c("Transportation", "Healthcare", "Socioeconomics", "Safety", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
-score = c(70, 75, 65, NA, 78, 80, 70, NA)
+  city= c("New York", "New York", "New York","New York", "Chicago", "Chicago", "Chicago", "Chicago"), 
+  category = c("Transportation", "Healthcare", "Socioeconomics", "Safety", "Transportation", "Healthcare", "Socioeconomics", "Safety"),
+  score = c(70, 75, 65, NA, 78, 80, 70, NA)
 )
 
 city_data %>%
-drop_na() %>%
-pivot_wider(names_from = category, values_from = score)
+  drop_na() %>%
+  pivot_wider(names_from = category, values_from = score)
 
 ```
 ```{r}
@@ -130,7 +130,7 @@ plot(bn.fit)
 
 # Make predictions using the Bayesian network
 newdata <- data.frame(Smoking=c("Yes", "No"),
-                       Lung_Cancer=c("No", "Yes"))
+                      Lung_Cancer=c("No", "Yes"))
 predictions <- predict(bn.fit, newdata=newdata)
 ```
 
