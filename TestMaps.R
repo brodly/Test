@@ -120,6 +120,7 @@ leafletOptions <- leafletOptions(
   cssDefinition = tags$style(".location-list-body td { text-align: center; }")
 )
 
+#Create vaccination map with legend and title
 vaccination_map3 <- leaflet(data = vaccination_sites) %>%
   addTiles() %>%
   addMarkers(~longitude, ~latitude, popup = ~site_name) %>% 
